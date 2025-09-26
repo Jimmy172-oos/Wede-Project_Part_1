@@ -1,0 +1,480 @@
+/* CSS Reset - ensures consistent styling across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles for entire website */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #2c5aa0, #4a90e2);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 25px;
+    margin: 0 2rem;
+    padding: 0.5rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: block;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+nav ul li a:active {
+    transform: translateY(0);
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+
+h1, h2, h3, h4, h5 {
+    color: #2c5aa0;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 2.2rem;
+    border-bottom: 3px solid #4a90e2;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+h5 {
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Lists */
+ul, ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+    color: #2c5aa0;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(135deg, #4a90e2, #2c5aa0);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-weight: 600;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #2c5aa0, #1a4480);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Form Styles */
+form {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+label {
+    font-weight: 600;
+    color: #2c5aa0;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+select, 
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus, 
+select:focus, 
+textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+th {
+    background: linear-gradient(135deg, #2c5aa0, #4a90e2);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Article Styles for Adoption Page */
+article {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+article h3, article h4 {
+    color: #2c5aa0;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+article img {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer h3, footer h4 {
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 0.5rem 0;
+}
+
+footer img {
+    margin: 1rem 0;
+}
+
+footer hr {
+    margin: 2rem 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #4a90e2, transparent);
+}
+
+/* Responsive Design - Mobile First Approach */
+
+/* Tablet Styles (768px and up) */
+@media screen and (min-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    
+    nav ul {
+        flex-wrap: nowrap;
+    }
+    
+    main {
+        padding: 3rem;
+    }
+    
+    /* Adoption page - 2 columns for tablets */
+    .adoption-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media screen and (min-width: 1024px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+    
+    /* Adoption page - 3 columns for desktop */
+    .adoption-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Contact form layout */
+    .contact-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-form-grid .full-width {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Large Desktop (1200px and up) */
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 1400px;
+    }
+}
+
+/* Mobile Styles (767px and below) */
+@media screen and (max-width: 767px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        margin: 0 1rem;
+    }
+    
+    nav ul li {
+        margin: 0.25rem 0;
+        width: 100%;
+    }
+    
+    nav ul li a {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    main {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Stack adoption articles vertically on mobile */
+    article {
+        margin-bottom: 1.5rem;
+    }
+    
+    article img {
+        height: 200px;
+    }
+    
+    /* Table becomes scrollable on mobile */
+    .table-container {
+        overflow-x: auto;
+    }
+    
+    table {
+        min-width: 600px;
+    }
+    
+    /* Form adjustments for mobile */
+    form {
+        padding: 1.5rem;
+    }
+    
+    button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Print Styles */
+@media print {
+    header, nav, footer {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    main {
+        box-shadow: none;
+        max-width: none;
+        margin: 0;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    header {
+        background: black;
+    }
+    
+    button {
+        background: black;
+        border: 2px solid white;
+    }
+}

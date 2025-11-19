@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contact Bloemfontein SPCA for animal rescue, adoption inquiries, volunteer opportunities, and emergency services. Available 24/7 for animal emergencies.">
+    <meta name="keywords" content="Bloemfontein SPCA, contact, animal rescue, pet adoption, volunteer, emergency, Free State">
+    <meta name="author" content="Bloemfontein SPCA">
+    
     <title>Contact Us - Bloemfontein SPCA</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,15 +29,17 @@
 
     <main>
         <h2>Contact Us</h2>
-        <li>Phone:<a href="+27511234567">(051) 123-4567</a></li>
-        <li>Emergency:<a href="+27511234999">(051) 123-4999</a></li>
-        <li>Email:<a href="info@bloem-spca.org.za">info@bloem-spca.org.za</a></li>
-        <li>Adoption Inquiries:<a href="adoption@bloem-spca.org.za">adopt@bloem-spca.org.za</a></li>
-        <li>Volunteer Coordinator:<a href="volunteer@bloem-spca.org.za">volunteer@bloem-spca.org.za</a></li>
+        <ul>
+            <li>Phone: <a href="tel:+27511234567">(051) 123-4567</a></li>
+            <li>Emergency: <a href="tel:+27511234999">(051) 123-4999</a></li>
+            <li>Email: <a href="mailto:info@bloem-spca.org.za">info@bloem-spca.org.za</a></li>
+            <li>Adoption Inquiries: <a href="mailto:adopt@bloem-spca.org.za">adopt@bloem-spca.org.za</a></li>
+            <li>Volunteer Coordinator: <a href="mailto:volunteer@bloem-spca.org.za">volunteer@bloem-spca.org.za</a></li>
+        </ul>
         
         <h3>Visit Us</h3>
         <p>
-            <Address>123 Animal Care Street, Bloemfontein, Free State 9300</Address>
+            <address>123 Animal Care Street, Bloemfontein, Free State 9300</address>
         </p>
 
         <h3>Operating Hours</h3>
@@ -62,7 +70,7 @@
         <h4>Get In Touch</h4>
         <p>We'd love to hear from you! Whether you're interested in adopting, volunteering, or just want to learn more about our work, don't hesitate to contact us.</p>
 
-        <!--Contact Form-->
+        <!--Contact Form with Validation-->
         <h5>Send Us a Message</h5>
         <form>
             <p>
@@ -71,8 +79,8 @@
             </p>
 
             <p>
-                <label for="email">Enter your email address</label><br>
-                <input type="text" id="email" name="email" required>
+                <label for="email">Enter your email address:</label><br>
+                <input type="email" id="email" name="email" required>
             </p>
 
             <p>
@@ -110,7 +118,7 @@
         <h3>Bloemfontein SPCA</h3>
         <p><strong>Our Promise:</strong> Every animal deserves a chance at a happy, healthy life.</p>
 
-        <img src="Images/cows.jpg" width="250" height="300">
+        <img src="Images/cows.jpg" alt="Rescued cows at Bloemfontein SPCA sanctuary" width="250" height="300">
 
         <h4>Follow Us</h4>
         <ul>
@@ -119,9 +127,12 @@
             <li>Twitter/X: @BloemSPCA</li>
         </ul>
 
-        <p>&copy; 2025 Bloemfontein SPCA. All Reserved</p>
+        <p>&copy; 2025 Bloemfontein SPCA. All Rights Reserved</p>
         <p><small>Built with love for our furry, four-legged friends.</small></p>
         
     </footer>
+    
+    <!-- Link JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>

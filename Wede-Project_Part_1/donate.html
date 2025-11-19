@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - Bloemfontein - SPCA</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Support Bloemfontein SPCA with a donation. Help us provide shelter, food, and medical care to rescued animals in the Free State.">
+    <meta name="keywords" content="donate SPCA, animal donation, support animal welfare, Bloemfontein charity, help animals, rescue funding">
+    <meta name="author" content="Bloemfontein SPCA">
+    
+    <title>Donate - Bloemfontein SPCA</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,12 +30,148 @@
     <main>
         <h2>Support Our Work</h2>
         <p>Your donations help us provide shelter, food, and medical care to animals in need.</p>
-        <button>Donate Now</button>
+        <p>Every contribution, no matter how small, makes a real difference in the lives of rescued animals.</p>
+
+        <h3>Why Your Donation Matters</h3>
+        <article>
+            <h4>R100 Can Provide</h4>
+            <ul>
+                <li>Food for 5 dogs for one day</li>
+                <li>Basic medical supplies</li>
+                <li>Bedding for kennels</li>
+            </ul>
+        </article>
+
+        <article>
+            <h4>R500 Can Provide</h4>
+            <ul>
+                <li>Vaccinations for multiple animals</li>
+                <li>Emergency veterinary care</li>
+                <li>Spay/neuter procedures</li>
+            </ul>
+        </article>
+
+        <article>
+            <h4>R1000+ Can Provide</h4>
+            <ul>
+                <li>Major surgery for injured animals</li>
+                <li>Long-term care for special needs pets</li>
+                <li>Rescue operations and transportation</li>
+            </ul>
+        </article>
+
+        <h3>Make Your Donation</h3>
+        
+        <!-- Donation Form -->
+        <form id="donationForm">
+            <p>
+                <label for="donor_name">Your Name: *</label><br>
+                <input type="text" id="donor_name" name="donor_name" required placeholder="Enter your full name">
+            </p>
+
+            <p>
+                <label for="donor_email">Email Address: *</label><br>
+                <input type="email" id="donor_email" name="donor_email" required placeholder="your.email@example.com">
+            </p>
+
+            <p>
+                <label for="donor_phone">Phone Number:</label><br>
+                <input type="tel" id="donor_phone" name="donor_phone" placeholder="0821234567">
+            </p>
+
+            <p>
+                <label for="donation_amount">Donation Amount (R): *</label><br>
+                <input type="number" id="donation_amount" name="donation_amount" min="10" step="10" required placeholder="e.g., 100">
+            </p>
+
+            <p>
+                <label for="donation_type">Donation Type: *</label><br>
+                <select id="donation_type" name="donation_type" required>
+                    <option value="">Please select...</option>
+                    <option value="once_off">One-Time Donation</option>
+                    <option value="monthly">Monthly Donation</option>
+                    <option value="annual">Annual Donation</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="donation_purpose">What would you like to support? *</label><br>
+                <select id="donation_purpose" name="donation_purpose" required>
+                    <option value="">Please select...</option>
+                    <option value="general">General Fund - Where Needed Most</option>
+                    <option value="medical">Medical Care & Surgery</option>
+                    <option value="food">Food & Supplies</option>
+                    <option value="rescue">Rescue Operations</option>
+                    <option value="spay_neuter">Spay/Neuter Programs</option>
+                    <option value="education">Community Education</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="donation_message">Message (Optional):</label><br>
+                <textarea id="donation_message" name="donation_message" rows="3" placeholder="Leave a message of support..."></textarea>
+            </p>
+
+            <p>
+                <label>
+                    <input type="checkbox" id="donation_receipt" name="donation_receipt" checked>
+                    Email me a donation receipt
+                </label>
+            </p>
+
+            <p>
+                <label>
+                    <input type="checkbox" id="donation_newsletter" name="donation_newsletter">
+                    Sign me up for the SPCA newsletter
+                </label>
+            </p>
+
+            <p>
+                <button type="submit">Donate Now</button>
+                <button type="reset">Clear Form</button>
+            </p>
+        </form>
+
+        <h3>Other Ways to Donate</h3>
+        <article>
+            <h4>Bank Transfer</h4>
+            <p><strong>Bank:</strong> First National Bank (FNB)</p>
+            <p><strong>Account Name:</strong> Bloemfontein SPCA</p>
+            <p><strong>Account Number:</strong> 1234567890</p>
+            <p><strong>Branch Code:</strong> 250655</p>
+            <p><strong>Reference:</strong> Your name + "Donation"</p>
+        </article>
+
+        <article>
+            <h4>In-Kind Donations</h4>
+            <p>We also accept donations of:</p>
+            <ul>
+                <li>Pet food (dry & canned)</li>
+                <li>Blankets and towels</li>
+                <li>Toys and treats</li>
+                <li>Cleaning supplies</li>
+                <li>Collars and leashes</li>
+            </ul>
+            <p>Drop off items at our facility during operating hours.</p>
+        </article>
+
+        <article>
+            <h4>Legacy Giving</h4>
+            <p>Consider leaving a gift to the SPCA in your will. Contact us for more information about legacy giving and how you can make a lasting impact.</p>
+        </article>
+
+        <h3>Tax Benefits</h3>
+        <p>Bloemfontein SPCA is a registered non-profit organization. Donations may be tax-deductible. Please consult with your tax advisor for specific guidance.</p>
+
+        <h3>Thank You!</h3>
+        <p>Every donation helps us save more lives. Thank you for your generosity and support!</p>
     </main>
 
+    <footer>
+        <p>&copy; 2025 Bloemfontein SPCA | All Rights Reserved</p>
+    </footer>
+    
+    <!-- Link JavaScript file -->
+    <script src="script.js"></script>
 </body>
-
-<footer>
-    <p>&copy; 2025 Bloemfontein SPCA | All Rights Reserved</p>
-</footer>
 </html>

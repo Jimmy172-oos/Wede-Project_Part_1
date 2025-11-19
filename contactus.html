@@ -37,10 +37,84 @@
             <li>Volunteer Coordinator: <a href="mailto:volunteer@bloem-spca.org.za">volunteer@bloem-spca.org.za</a></li>
         </ul>
         
-        <h3>Visit Us</h3>
-        <p>
-            <address>123 Animal Care Street, Bloemfontein, Free State 9300</address>
-        </p>
+       <!-- Replace the entire map section with this OpenStreetMap version -->
+<div class="map-container">
+    <h4>Find Us</h4>
+    <div id="map" style="height: 400px; width: 100%; border-radius: 10px; margin: 1rem 0;"></div>
+    <p><small>📍 Drag to explore the area around our facility in Bloemfontein</small></p>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script>
+// OpenStreetMap - No API Key Needed!
+document.addEventListener('DOMContentLoaded', function() {
+    const mapElement = document.getElementById('map');
+    
+    if (mapElement) {
+        try {
+            // Initialize map centered on Bloemfontein
+            const map = L.map('map').setView([-29.1167, 26.2167], 13);
+            
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 18
+            }).addTo(map);
+            
+            // Custom paw icon
+            const pawIcon = L.divIcon({
+                html: `
+                    <div style="background: #2c5aa0; border: 3px solid white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                        <span style="color: white; font-size: 16px;">🐾</span>
+                    </div>
+                `,
+                className: 'paw-marker',
+                iconSize: [40, 40],
+                iconAnchor: [20, 40]
+            });
+            
+            // Add marker
+            const marker = L.marker([-29.1167, 26.2167], { icon: pawIcon }).addTo(map);
+            
+            // Add popup
+            marker.bindPopup(`
+                <div style="padding: 1rem; max-width: 250px;">
+                    <h3 style="color: #2c5aa0; margin: 0 0 0.5rem 0; font-size: 1.2rem;">Bloemfontein SPCA</h3>
+                    <p style="margin: 0.25rem 0; font-size: 14px;">
+                        <strong>📍 Address:</strong><br>
+                        123 Animal Care Street<br>
+                        Bloemfontein, Free State 9300
+                    </p>
+                    <p style="margin: 0.25rem 0; font-size: 14px;">
+                        <strong>📞 Phone:</strong><br>
+                        (051) 123-4567
+                    </p>
+                    <p style="margin: 0.25rem 0; font-size: 14px;">
+                        <strong>🕒 Hours:</strong><br>
+                        Mon-Fri: 9AM-5PM<br>
+                        Sat: 9AM-1PM
+                    </p>
+                </div>
+            `).openPopup();
+            
+        } catch (error) {
+            console.error('Map initialization error:', error);
+            // Fallback content
+            mapElement.innerHTML = `
+                <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 10px; padding: 2rem; text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📍</div>
+                    <h4 style="color: #2c5aa0; margin-bottom: 1rem;">Bloemfontein SPCA</h4>
+                    <p style="margin-bottom: 0.5rem;"><strong>123 Animal Care Street</strong></p>
+                    <p style="margin-bottom: 1rem;">Bloemfontein, Free State 9300</p>
+                    <p style="font-size: 0.9rem; color: #666;">Interactive map unavailable - visit us at the address above</p>
+                </div>
+            `;
+        }
+    }
+});
+</script>
 
         <h3>Operating Hours</h3>
         <table border="1">

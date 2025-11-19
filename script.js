@@ -440,3 +440,115 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Bloemfontein SPCA JavaScript loaded successfully! 🐾');
     console.log('Active features: Contact form, Volunteer form, Donation form, Gallery lightbox, Animations');
 });
+// ==============================================
+// INTERACTIVE MAP FUNCTIONALITY
+// ==============================================
+function initMap() {
+    // Bloemfontein coordinates
+    const bloemfonteinLocation = { 
+        lat: -29.1167, 
+        lng: 26.2167 
+    };
+    
+    const mapElement = document.getElementById('map');
+    
+    if (mapElement && typeof google !== 'undefined') {
+        try {
+            const map = new google.maps.Map(mapElement, {
+                zoom: 12,
+                center: bloemfonteinLocation,
+                mapTypeControl: true,
+                streetViewControl: true,
+                zoomControl: true,
+            });
+            
+            // Add marker
+            const marker = new google.maps.Marker({
+                position: bloemfonteinLocation,
+                map: map,
+                title: "Bloemfontein SPCA - Animal Care Street",
+                icon: {
+                    url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+                        <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="15" fill="#2c5aa0" stroke="white" stroke-width="2"/>
+                            <text x="20" y="26" text-anchor="middle" fill="white" font-size="14">🐾</text>
+                        </svg>
+                    `),
+                    scaledSize: new google.maps.Size(40, 40)
+                }
+            });
+            
+            // Info window
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="padding: 1rem; max-width: 200px;">
+                        <h3 style="color: #2c5aa0; margin: 0 0 0.5rem 0;">Bloemfontein SPCA</h3>
+                        <p style="margin: 0.25rem 0; font-size: 14px;">
+                            <strong>📍 Address:</strong><br>
+                            123 Animal Care Street<br>
+                            Bloemfontein, 9300
+                        </p>
+                        <p style="margin: 0.25rem 0; font-size: 14px;">
+                            <strong>📞 Phone:</strong><br>
+                            (051) 123-4567
+                        </p>
+                    </div>
+                `
+            });
+            
+            // Show info window on marker click
+            marker.addListener('click', () => {
+                infoWindow.open(map, marker);
+            });
+            
+            // Auto-open info window
+            setTimeout(() => {
+                infoWindow.open(map, marker);
+            }, 1500);
+            
+        } catch (error) {
+            console.error('Google Maps error:', error);
+            showMapFallback();
+        }
+    } else {
+        showMapFallback();
+    }
+}
+
+// Fallback if Google Maps fails to load
+function showMapFallback() {
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+        mapElement.innerHTML = `
+            <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #f8f9fa; border-radius: 10px; padding: 2rem; text-align: center;">
+                <h4 style="color: #2c5aa0; margin-bottom: 1rem;">📍 Bloemfontein SPCA Location</h4>
+                <p style="margin-bottom: 1rem;"><strong>Address:</strong><br>123 Animal Care Street, Bloemfontein, 9300</p>
+                <p style="margin-bottom: 1rem;"><strong>Directions:</strong><br>Located in central Bloemfontein near the city center.</p>
+                <button onclick="openInGoogleMaps()" style="background: #2c5aa0; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer;">
+                    Open in Google Maps
+                </button>
+            </div>
+        `;
+    }
+}
+
+function openInGoogleMaps() {
+    window.open('https://www.google.com/maps/place/Bloemfontein', '_blank');
+}
+
+// Load Google Maps with error handling
+function loadGoogleMaps() {
+    // Use a test API key (replace with your actual key)
+    const apiKey = 'AIzaSyCQ3f3pP5vY7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y'; // This is invalid - you need to replace it
+    
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+    script.async = true;
+    script.defer = true;
+    script.onerror = function() {
+        console.error('Failed to load Google Maps API');
+        showMapFallback();
+    };
+    
+    document.head.appendChild(script);
+}
